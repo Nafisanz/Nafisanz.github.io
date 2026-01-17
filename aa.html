@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStory - Daftar Artikel</title>
+    <style>
+        /* Menghapus margin default browser */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh; /* Tinggi penuh layar */
+            width: 100%;
+            /* PENGATURAN GAMBAR AGAR PAS */
+            background-image: url("latar.jpeg"); 
+            background-size: cover;      /* Gambar menutupi seluruh area tanpa gepeng */
+            background-position: center; /* Gambar fokus di tengah */
+            background-repeat: no-repeat;
+            
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Teks di sebelah kiri */
+            padding-left: 10%;           /* Jarak teks dari pinggir kiri */
+            position: relative;
+        }
+
+        /* Lapisan gelap agar teks mudah dibaca */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Hitam transparan 40% */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Supaya teks di atas lapisan gelap */
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .tanggal {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #ff9a9e;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: white;
+            color: #333;
+        }
+        .sosmed {
+            margin-top: 20px;
+            padding: 10px; /* Memberi jarak dalam agar tidak nempel */
+        }
+
+        .sosmed a {
+            text-decoration: none;
+            color: white; /* Warna ikon */
+            margin-right: 20px; /* Jarak antara IG dan TikTok */
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        /* Efek warna saat kursor menempel */
+        .icon-ig:hover {
+            color: #E1306C; /* Warna khas Instagram */
+        }
+
+        .icon-tiktok:hover {
+            color: #00f2ea; /* Warna khas TikTok */
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>List of Contents</h1>
+            
+            <div class="tanggal">
+                <?php
+                // Mengambil tanggal hari ini secara otomatis
+                echo "📅 " . date("d M Y");
+                ?>
+            </div>
+
+            <ul>
+                <li>✨ <a href="BelajarCoding.html"> Belajar Coding </a href ></li>
+                <li>🚀 <a href="ceritaKu.html"> Perjalanan panjang </a href> </li>
+                <li>🎨 <a href="aku.html"> Jadi Mahasiswa </a href> </li>
+                <li>📚 <a href="joneksi.html"> Berbagi Kisah </a href> </li>
+            </ul>
+
+            <br>
+            <a href="index.html" class="btn-back">⬅ Kembali ke Home</a>
+        </div>
+    </section>
+
+</body>
+</html>

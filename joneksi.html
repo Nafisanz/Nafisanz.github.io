@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Bagikan Ceritamu</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: #fdf2f2;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 { text-align: center; color: #ff9a9e; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        textarea { height: 120px; resize: none; }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ff9a9e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        button:hover { background: #fecfef; color: #333; }
+        .alert { padding: 10px; margin-bottom: 15px; border-radius: 5px; text-align: center; }
+        .sukses { background: #d4edda; color: #155724; }
+        .gagal { background: #f8d7da; color: #721c24; }
+        .back { display: block; text-align: center; margin-top: 15px; text-decoration: none; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>✍️ Bagikan Ceritamu</h2>
+    <p style="text-align: center; font-size: 12px; margin-bottom: 20px;">" Setiap cerita adalah seni "</p>
+
+    <?php echo $pesan; ?>
+
+    <form action="" method="POST">
+        <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" name="nama" placeholder="Contoh: Anisatun Nafisa" required>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat</label>
+            <input type="text" name="alamat" placeholder="Kota kamu" required>
+        </div>
+
+        <div class="form-group">
+            <label>Nomor WhatsApp</label>
+            <input type="number" name="wa" placeholder="08123xxx" required>
+        </div>
+
+        <div class="form-group">
+            <label>Cerita Kamu</label>
+            <textarea name="cerita" placeholder="Tulis ceritamu di sini..." required></textarea>
+        </div>
+
+        <button type="submit" name="kirim">Kirim Cerita 🚀</button>
+    </form>
+
+    <a href="aa.html" class="back">← Back to List</a>
+</div>
+
+</body>
+</html>
